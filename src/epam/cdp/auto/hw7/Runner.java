@@ -6,6 +6,8 @@ import java.io.*;
 
 
 public class Runner {
+	
+	private static final String SWEETS_INFO_TXT = "sweets_info.txt";
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -46,6 +48,22 @@ public class Runner {
 	}
 	
 	System.out.println(results);
+	
+	
+	//------HOMEWORK 8
+	System.out.println("HOMEWORK 8");
+	System.out.println("Enter price of Sweet: ");
+	BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
+	String str_price = reader2.readLine();
+	int priceOfSweet = Integer.parseInt(str_price);
+	
+	TxtFileReader txtReader = new TxtFileReader(SWEETS_INFO_TXT);
+	try{
+		Sweets sweet = txtReader.readInfo(priceOfSweet);
+		System.out.println(sweet.toString());
+	} catch(NullPointerException ex) {
+		System.out.println("There is not sweet with price = " + priceOfSweet);
+	}
 	
 	
 

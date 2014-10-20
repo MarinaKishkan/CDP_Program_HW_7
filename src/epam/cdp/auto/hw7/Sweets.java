@@ -40,5 +40,14 @@ public class Sweets {
 		return vendor;
 		
 	}
+	
+	public String toString() {
+		
+		return "Sweet: \n" +
+				"-Name: " + getName() + "\n" +
+				"-Price: " + getPrice() + "\n" +
+				"-Weight: " + getWeight() + "\n" +
+				"-Vendor: " + getVendor() + "\n;\n";
+	}
 
 }
